@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Brandix Screwdriver",
+    "info": "This automatic screwdriver comes with 24 various screwdriver and drill bits, a convenient carrying case, and a charging cord, so you can be sure your mini drill is always charged and ready to go.",
+    "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/1.jpg",
+    "min_quantity": "5",
+    "available_quantity": "30",
+    "price": "600",
+    "ratting": "4.5"
+  },
+  {
+    "name": "Rotary Hammer Drill",
+    "info": "This hammer drill reduces vibration felt by the user at the handles, compared to rotary hammers without this feature.",
+    "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/2.jpg",
+    "min_quantity": "8",
+    "available_quantity": "50",
+    "price": "800",
+    "ratting": "4.9"
+  },
+  {
+    "name": "WORX WX801L Mini-Cutter",
+    "info": "Cutting disc, compact for one hand operation.Includes 3 cutting discs and 1 grinding disc. Versatile cutting tool - power to cut metal, tile, thin concrete and plastic",
+    "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/3.jpg",
+    "min_quantity": "11",
+    "available_quantity": "40",
+    "price": "1200",
+    "ratting": "4.3"
+  },
+  {
+    "name": "Adjustable wrench",
+    "info": "Durable chrome vanadium construction is super sturdy.ProTouch grip provides maximum torque and comfort and is slip resistant.Wrenches have English and metric scales, extra-wide capacity, and a hang hole for easy wall storage.",
+    "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/4.jpg",
+    "min_quantity": "50",
+    "available_quantity": "500",
+    "price": "80",
+    "ratting": "4.4"
+  },
+  {
+    "name": "Chainsaw",
+    "info": "Husqvarna 20-inch 450 Rancher gas chainsaw is ideal for tasks such as tree pruning, yard cleanups and firewood cutting. 3.2-HP X-Torq engine reduces both fuel consumption and gasoline emissions",
+    "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/5.jpg",
+    "min-quantity": "10",
+    "available-quantity": "60",
+    "price": "500",
+    "ratting": "5"
+  },
+  {
+    "name": "Circular saw",
+    "info": "Power - Brushless motor of DEWALT 7 1/4 circular saw provides 5500RPM maintaining speed under load. Runtime - The cordless circular saw provides 330 crosscuts in 2x4 (pine)",
+    "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/6.jpg",
+    "min_quantity": "15",
+    "available_quantity": "80",
+    "price": "450",
+    "ratting": "4.7"
+  }
+]

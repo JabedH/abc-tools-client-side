@@ -1,0 +1,20 @@
+[
+  {
+    "name": "MARTHA SMITH",
+    "info": "AMAZING BUSINESS! This Business staff here is incredibly friendly and extremely qualified! ",
+    "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/p-1.png",
+    "ratting": "4.5"
+  },
+  {
+    "name": "JAMES ROBERT",
+    "info": "I love this place. I highly recommend this place to anyone who wants to get in shape",
+    "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/p-2.png",
+    "ratting": "5"
+  },
+  {
+    "name": "AMELIA AMILI",
+    "info": "Excellent personal training. Trainers who really care and go above and beyond to help you achieve your goals",
+    "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/p-3.png",
+    "ratting": "4.5"
+  }
+]

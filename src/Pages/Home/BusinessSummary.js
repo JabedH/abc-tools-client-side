@@ -8,11 +8,11 @@ const BusinessSummary = () => {
   return (
     <div className="bg-slate-400 ">
       <div className="p-10 ">
-        <h1 className="text-4xl font-bold mb-5 uppercase text-white">
+        <h1 className="text-4xl font-bold mb-5 uppercase grid grid-cols-1 text-white">
           Business People are trust us
         </h1>
         <p className="text-xl font-bold mb-5 text-white">
-          TRY TO UNDERSTAND USER EXPECTATION{" "}
+          TRY TO UNDERSTAND USER EXPECTATION
         </p>
         <div className="">
           <div className="flex justify-evenly   text-xl font-bold ">

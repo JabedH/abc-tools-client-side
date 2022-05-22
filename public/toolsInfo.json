@@ -39,8 +39,8 @@
     "name": "Chainsaw",
     "info": "Husqvarna 20-inch 450 Rancher gas chainsaw is ideal for tasks such as tree pruning, yard cleanups and firewood cutting. 3.2-HP X-Torq engine reduces both fuel consumption and gasoline emissions",
     "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/5.jpg",
-    "min-quantity": "10",
-    "available-quantity": "60",
+    "min_quantity": "30",
+    "available_quantity": "800",
     "price": "500",
     "ratting": "5"
   },

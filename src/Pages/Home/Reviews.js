@@ -11,7 +11,7 @@ const Reviews = () => {
       .then((data) => setReviews(data));
   }, []);
   return (
-    <div className="mt-20">
+    <div className="my-20">
       <h1 className=" font-bold text-4xl mb-10">Reviews</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 ">
         {reviews.map((review) => (

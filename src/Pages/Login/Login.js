@@ -1,10 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+    console.log(data);
+  };
   return (
     <div>
       <h1>Login</h1>
@@ -12,26 +29,76 @@ const Login = () => {
         <div class=" w-96 lg:flex-row-reverse ">
           <div class="card flex-shrink-0 shadow-2xl bg-base-100">
             <div class="card-body ">
-              <form action="">
+              <form onSubmit={handleSubmit(onSubmit)} action="">
                 <div class="form-control">
                   <label class="label">
                     <span class="label-text">Email</span>
                   </label>
                   <input
-                    type="text"
-                    placeholder="email"
+                    type="email"
+                    placeholder="Type Email"
                     class="input input-bordered"
+                    {...register("email", {
+                      required: {
+                        value: true,
+                        message: "Please provide a email",
+                      },
+                    })}
+                    {...register("email", {
+                      pattern: {
+                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                        message: "provide a valid email",
+                      },
+                    })}
                   />
+                  <label class="label">
+                    {errors.email?.type === "required" && (
+                      <span class="label-text-alt text-red-500">
+                        {errors.email.message}
+                      </span>
+                    )}
+                  </label>
+                  <label class="label">
+                    {errors.email?.type === "pattern" && (
+                      <span class="label-text-alt text-red-500">Alt label</span>
+                    )}
+                  </label>
                 </div>
                 <div class="form-control">
                   <label class="label">
                     <span class="label-text">Password</span>
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     placeholder="password"
                     class="input input-bordered"
+                    {...register("password", {
+                      required: {
+                        value: true,
+                        message: "Please provide a password",
+                      },
+                    })}
+                    {...register("password", {
+                      minLength: {
+                        value: 6,
+                        message: "Password must be 6 character or more",
+                      },
+                    })}
                   />
+                  <label class="label">
+                    {errors.password?.type === "required" && (
+                      <span class="label-text-alt text-red-500">
+                        {errors.password.message}
+                      </span>
+                    )}
+                  </label>
+                  <label class="label">
+                    {errors.password?.type === "minLength" && (
+                      <span class="label-text-alt text-red-500">
+                        {errors.password.message}
+                      </span>
+                    )}
+                  </label>
                   <label class="label">
                     <a href="#" class="label-text-alt link link-hover">
                       Forgot password?

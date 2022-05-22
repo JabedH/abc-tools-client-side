@@ -6,9 +6,9 @@ import Rating from "react-rating";
 const ToolsInfo = ({ tool }) => {
   return (
     <div>
-      <div className=" grid-cols-2 ">
-        <div class="card w-96  bg-base-100 shadow-xl">
-          <figure className="p-10 h-96">
+      <div className="mb-10">
+        <div class="card   bg-base-100 shadow-2xl">
+          <figure className="p-5 h-72">
             <img src={tool.img} alt="Shoes" />
           </figure>
           <div class="card-body">
@@ -20,33 +20,37 @@ const ToolsInfo = ({ tool }) => {
                 ""
               )}
             </h2>
-            <p className="h-36">{tool.info}</p>
-            <p>
-              Minimum Quantity:{" "}
-              <span className="font-bold">{tool.min_quantity}</span>{" "}
-            </p>
-            <p>
-              Available Quantity:{" "}
-              <span className="font-bold">{tool.available_quantity}</span>{" "}
-            </p>
-            <p>
-              Price: <span className="font-bold">${tool.price}</span>{" "}
-            </p>
-            <div>
-              <Rating
-                initialRating={tool.ratting}
-                emptySymbol={<FontAwesomeIcon icon={faStar} />}
-                fullSymbol={
-                  <FontAwesomeIcon
-                    style={{ color: "goldenrod" }}
-                    icon={faStar}
-                  />
-                }
-                readonly
-              ></Rating>
+            <p className="h-20">{tool.info}</p>
+            <div className="flex">
+              <p>
+                Mini Quantity:{" "}
+                <span className="font-bold">{tool.min_quantity}</span>{" "}
+              </p>
+              <p>
+                Quantity:{" "}
+                <span className="font-bold">{tool.available_quantity}</span>{" "}
+              </p>
             </div>
-            <div class="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+            <div className="flex">
+              <p>
+                Price: <span className="font-bold">${tool.price}</span>{" "}
+              </p>
+              <div>
+                <Rating
+                  initialRating={tool.ratting}
+                  emptySymbol={<FontAwesomeIcon icon={faStar} />}
+                  fullSymbol={
+                    <FontAwesomeIcon
+                      style={{ color: "goldenrod" }}
+                      icon={faStar}
+                    />
+                  }
+                  readonly
+                ></Rating>
+              </div>
+            </div>
+            <div class="card-actions justify-center">
+              <button className="btn btn-primary">place Order</button>
             </div>
           </div>
         </div>

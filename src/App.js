@@ -7,6 +7,7 @@ import Footer from "./Sheard/Navbar/Footer";
 import Login from "./Pages/Login/Login";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Signup from "./Pages/Login/Signup";
+import RequireAuth from "./Hookes/RequireAuth";
 
 function App() {
   return (
@@ -16,7 +17,14 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        ></Route>
       </Routes>
       <Footer />
     </div>

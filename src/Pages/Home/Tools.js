@@ -9,7 +9,7 @@ import ToolsInfo from "./ToolsInfo";
 const Tools = () => {
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    fetch("toolsInfo.json")
+    fetch("http://localhost:5000/tools")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);
@@ -17,7 +17,7 @@ const Tools = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
       {tools.map((tool) => (
-        <ToolsInfo tool={tool} />
+        <ToolsInfo key={tool._id} tool={tool} />
       ))}
     </div>
   );

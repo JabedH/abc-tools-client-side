@@ -2,8 +2,13 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Rating from "react-rating";
+import { Link, useNavigate } from "react-router-dom";
 
 const ToolsInfo = ({ tool }) => {
+  const navigate = useNavigate();
+  const handleOrder = (id) => {
+    navigate(`/Purchase/${id}`);
+  };
   return (
     <div>
       <div className="mb-10">
@@ -50,7 +55,12 @@ const ToolsInfo = ({ tool }) => {
               </div>
             </div>
             <div class="card-actions justify-center">
-              <button className="btn btn-primary">place Order</button>
+              <button
+                onClick={() => handleOrder(tool._id)}
+                className="btn btn-primary"
+              >
+                place Order
+              </button>
             </div>
           </div>
         </div>

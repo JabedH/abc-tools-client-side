@@ -4,9 +4,10 @@
     "info": "This automatic screwdriver comes with 24 various screwdriver and drill bits, a convenient carrying case",
     "img": "https://raw.githubusercontent.com/All-MyProject/tools-img/main/1.jpg",
     "min_quantity": "5",
-    "available_quantity": "30",
+    "available_quantity": "0",
     "price": "600",
-    "ratting": "4.5"
+    "ratting": "4.5",
+    "brand": "DEWALT"
   },
   {
     "name": "Rotary Hammer Drill",
@@ -15,7 +16,8 @@
     "min_quantity": "8",
     "available_quantity": "50",
     "price": "800",
-    "ratting": "4.9"
+    "ratting": "4.9",
+    "brand": "BLACK+DECKER"
   },
   {
     "name": "WORX WX801L Mini-Cutter",
@@ -24,7 +26,8 @@
     "min_quantity": "11",
     "available_quantity": "40",
     "price": "1200",
-    "ratting": "4.3"
+    "ratting": "4.3",
+    "brand": "WORX"
   },
   {
     "name": "Adjustable wrench",
@@ -33,7 +36,8 @@
     "min_quantity": "50",
     "available_quantity": "500",
     "price": "80",
-    "ratting": "4.4"
+    "ratting": "4.4",
+    "brand": "Craftsman"
   },
   {
     "name": "Chainsaw",
@@ -42,7 +46,8 @@
     "min_quantity": "30",
     "available_quantity": "800",
     "price": "500",
-    "ratting": "5"
+    "ratting": "5",
+    "brand": "Greenworks"
   },
   {
     "name": "Circular saw",
@@ -51,6 +56,7 @@
     "min_quantity": "15",
     "available_quantity": "80",
     "price": "450",
-    "ratting": "4.7"
+    "ratting": "4.7",
+    "brand": "Skil"
   }
 ]

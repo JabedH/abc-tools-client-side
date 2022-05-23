@@ -24,22 +24,25 @@ const Purchase = () => {
   }, []);
 
   const inc = () => {
-    if (newCount > tools.available_quantity - 1) {
+    if (newCount > tools.available_quantity) {
+      return;
+    }
+    if (newCount == tools.available_quantity) {
       return;
     }
     setCount(newCount + 1);
   };
   console.log(tools.min_quantity);
   const dec = () => {
-    if (newCount < tools.min_quantity + 1) {
+    if (newCount < tools.min_quantity) {
+      return;
+    }
+    if (newCount == tools.min_quantity) {
       return;
     }
     setCount(newCount - 1);
   };
   const { id } = useParams();
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
 
   const handleBooking = (event) => {
     event.preventDefault();
@@ -87,6 +90,46 @@ const Purchase = () => {
             {/* <p class="py-6">{tools.info}</p> */}
             <div class="divider"></div>
             <div>
+              <div>
+                <div>
+                  <p className="font-2xl">QUANTITY</p>
+                </div>
+                <div className="flex border-2 w-28">
+                  <button onClick={inc} className="text-3xl pl-2">
+                    +
+                  </button>
+                  <input
+                    className="w-14 text-center "
+                    type="text"
+                    value={count}
+                  />
+                  <button onClick={dec} className="text-3xl pr-2">
+                    -
+                  </button>
+                </div>
+              </div>
+              <div>
+                <p className="font-bold text-slate-600 mt-5">COLOR</p>
+                <div className="flex gap-2 my-3">
+                  <input
+                    type="radio"
+                    name="radio-2"
+                    class="radio border-0  radio-primary bg-red-500"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="radio-2"
+                    class="radio border-0 radio-primary bg-yellow-500"
+                  />
+                  <input
+                    type="radio"
+                    name="radio-2"
+                    class="radio border-0  radio-primary bg-blue-500"
+                  />
+                </div>
+              </div>
+              <h1 className="font-bold text-4xl my-5">${tools.price}.00</h1>
               <form action="" onSubmit={handleBooking}>
                 <div class="form-control gap-3">
                   <label class="label">
@@ -127,44 +170,9 @@ const Purchase = () => {
                     Please Fill Out Your Shipping Address"
                   />
                 </div>
-                <h1 className="font-bold text-4xl my-5">${tools.price}.00</h1>
-                <div>
-                  <p className="font-bold text-slate-600">COLOR</p>
-                  <div className="flex gap-2 my-3">
-                    <input
-                      type="radio"
-                      name="radio-2"
-                      class="radio border-0  radio-primary bg-red-500"
-                      checked
-                    />
-                    <input
-                      type="radio"
-                      name="radio-2"
-                      class="radio border-0 radio-primary bg-yellow-500"
-                    />
-                    <input
-                      type="radio"
-                      name="radio-2"
-                      class="radio border-0  radio-primary bg-blue-500"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <p className="font-2xl">QUANTITY</p>
-                </div>
-                <div className="flex border-2">
-                  <button onClick={inc} className="text-3xl pl-2">
-                    +
-                  </button>
-                  <input
-                    className="w-14 text-center "
-                    type="text"
-                    value={count}
-                  />
-                  <button onClick={dec} className="text-3xl pr-2">
-                    -
-                  </button>
-                </div>
+                <input type="number" />
+
+                {/* <input type="submit" value="Confirm Order" /> */}
                 <div className="flex gap-5">
                   <button type="submit" class="btn btn-primary">
                     Confirm Order

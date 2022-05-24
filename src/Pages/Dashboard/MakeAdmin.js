@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import Loading from "../../Sheard/Navbar/Loading";
 import UsersData from "./UsersData";
 
-const AllUsers = () => {
+const MakeAdmin = () => {
   const {
     data: users,
     isLoading,
@@ -46,4 +46,4 @@ const AllUsers = () => {
   );
 };
 
-export default AllUsers;
+export default MakeAdmin;

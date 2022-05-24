@@ -5,16 +5,20 @@ import Rating from "react-rating";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+
   useEffect(() => {
     fetch("Reviews.json")
       .then((res) => res.json())
-      .then((data) => setReviews(data));
+      .then((data) => {
+        const newData = data.reverse();
+        setReviews(newData);
+      });
   }, []);
   return (
     <div className="my-20">
       <h1 className=" font-bold text-4xl mb-10">Reviews</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 ">
-        {reviews.map((review) => (
+        {reviews.map((review, index) => (
           <div class="card  bg-base-100 shadow-xl">
             <div className="object-center">
               <div class="avatar ">

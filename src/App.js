@@ -15,8 +15,12 @@ import AddAReview from "./Pages/Dashboard/AddAReview";
 import MyOrders from "./Pages/Dashboard/MyOrders";
 import Myprofile from "./Pages/Dashboard/Myprofile";
 import Payment from "./Pages/Dashboard/Payment";
-import AllUsers from "./Pages/Dashboard/AllUsers";
+import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
 import RequireAdmin from "./Hookes/RequireAdmin";
+import RequireUser from "./Hookes/RequireUser";
+import Manageallorders from "./Pages/Dashboard/Manageallorders";
+import Addaproduct from "./Pages/Dashboard/Addaproduct";
+import Manageproducts from "./Pages/Dashboard/Manageproducts";
 
 function App() {
   return (
@@ -35,18 +39,55 @@ function App() {
           }
         >
           <Route index element={<MyOrders />}></Route>
-          <Route path="addareview" element={<AddAReview />}></Route>
-          <Route path="myprofile" element={<Myprofile />}></Route>
-          <Route path="payment/:id" element={<Payment />}></Route>z
           <Route
-            path="allusers"
+            path="addareview"
+            element={
+              <RequireUser>
+                <AddAReview />
+              </RequireUser>
+            }
+          ></Route>
+          <Route path="myprofile" element={<Myprofile />}></Route>
+          <Route
+            path="payment/:id"
+            element={
+              <RequireUser>
+                <Payment />
+              </RequireUser>
+            }
+          ></Route>
+          <Route
+            path="MakeAdmin"
             element={
               <RequireAdmin>
-                <AllUsers />
+                <MakeAdmin />
               </RequireAdmin>
             }
           ></Route>
-          z
+          <Route
+            path="manageallorders"
+            element={
+              <RequireAdmin>
+                <Manageallorders />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addaproduct"
+            element={
+              <RequireAdmin>
+                <Addaproduct />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageproducts"
+            element={
+              <RequireAdmin>
+                <Manageproducts />
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route
           path="/purchase/:id"

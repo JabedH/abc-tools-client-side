@@ -19,6 +19,24 @@ const MyOrders = () => {
         .then((data) => setBooking(data));
     }
   }, [user]);
+
+  const handleDeleteOne = (id) => {
+    console.log(id);
+    const confirmDelete = window.confirm("Are you want to delete?");
+    if (confirmDelete) {
+      const url = `http://localhost:5000/booking/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const remaining = booking.filter((book) => book._id !== id);
+            setBooking(remaining);
+          }
+        });
+    }
+  };
   return (
     <div className=" justify-around ">
       <div class="overflow-x-auto ">
@@ -47,7 +65,10 @@ const MyOrders = () => {
                     </Link>
                   )}
                   {book.price && !book.paid && (
-                    <button className="btn btn-xs border-0 ml-2 bg-red-600">
+                    <button
+                      onClick={() => handleDeleteOne(book._id)}
+                      className="btn btn-xs border-0 ml-2 bg-red-600"
+                    >
                       Cancel
                     </button>
                   )}

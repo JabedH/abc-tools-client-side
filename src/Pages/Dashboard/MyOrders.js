@@ -33,7 +33,7 @@ const MyOrders = () => {
             </tr>
           </thead>
           {booking.map((book, index) => (
-            <tbody>
+            <tbody key={book._id}>
               <tr>
                 <th>{index + 1}</th>
                 <td>{book.name}</td>
@@ -52,9 +52,16 @@ const MyOrders = () => {
                     </button>
                   )}
                   {book.price && book.paid && (
-                    <p>
-                      <span className="text-green-500 font-bold">Paid</span>
-                    </p>
+                    <>
+                      <p>
+                        <span className="text-green-500 font-bold">Paid</span>
+                      </p>
+                      <p>
+                        <span className="text-green-500 font-bold">
+                          transactionId:{book.transactionID}
+                        </span>
+                      </p>
+                    </>
                   )}
                 </td>
               </tr>

@@ -16,9 +16,9 @@ const Payment = () => {
   const { data: booking, isLoading } = useQuery(["booking", id], () =>
     fetch(url, {
       method: "GET",
-      // headers: {
-      //   authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      // },
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     }).then((res) => res.json())
   );
   if (isLoading) {
@@ -39,9 +39,9 @@ const Payment = () => {
       </div>
       <div class="card w-96 bg-base-100 shadow-xl">
         <div class="card-body">
-          {/* <Elements stripe={stripePromise}>
+          <Elements stripe={stripePromise}>
             <CheckoutForm booking={booking} />
-          </Elements> */}
+          </Elements>
         </div>
       </div>
     </div>

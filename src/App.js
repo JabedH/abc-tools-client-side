@@ -15,6 +15,8 @@ import AddAReview from "./Pages/Dashboard/AddAReview";
 import MyOrders from "./Pages/Dashboard/MyOrders";
 import Myprofile from "./Pages/Dashboard/Myprofile";
 import Payment from "./Pages/Dashboard/Payment";
+import AllUsers from "./Pages/Dashboard/AllUsers";
+import RequireAdmin from "./Hookes/RequireAdmin";
 
 function App() {
   return (
@@ -35,7 +37,16 @@ function App() {
           <Route index element={<MyOrders />}></Route>
           <Route path="addareview" element={<AddAReview />}></Route>
           <Route path="myprofile" element={<Myprofile />}></Route>
-          <Route path="payment/:id" element={<Payment />}></Route>
+          <Route path="payment/:id" element={<Payment />}></Route>z
+          <Route
+            path="allusers"
+            element={
+              <RequireAdmin>
+                <AllUsers />
+              </RequireAdmin>
+            }
+          ></Route>
+          z
         </Route>
         <Route
           path="/purchase/:id"

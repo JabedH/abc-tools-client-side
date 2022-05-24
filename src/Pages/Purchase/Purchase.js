@@ -53,8 +53,8 @@ const Purchase = () => {
       toolName: name,
       price: price,
       quantity: newCount,
-      name: user.email,
-      email: user.displayName,
+      name: user.displayName,
+      email: user.name,
       address: address,
     };
     console.log(booking);

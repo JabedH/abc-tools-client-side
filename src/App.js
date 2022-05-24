@@ -21,6 +21,7 @@ import RequireUser from "./Hookes/RequireUser";
 import Manageallorders from "./Pages/Dashboard/Manageallorders";
 import Addaproduct from "./Pages/Dashboard/Addaproduct";
 import Manageproducts from "./Pages/Dashboard/Manageproducts";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -97,6 +98,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <ToastContainer />

@@ -54,7 +54,7 @@ const Purchase = () => {
       price: price,
       quantity: newCount,
       name: user.displayName,
-      email: user.name,
+      userEmail: user.email,
       address: address,
     };
     console.log(booking);

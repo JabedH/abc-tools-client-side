@@ -6,6 +6,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import useToken from "../../Hookes/useToken";
 
 const Login = () => {
   const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
@@ -18,11 +19,12 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
+  const [token] = useToken(user || Guser);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  let navigate = useNavigate();
-  let location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  if (user || Guser) {
+  if (token) {
     navigate(from, { replace: true });
   }
   const onSubmit = (data) => {

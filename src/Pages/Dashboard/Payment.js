@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Loading from "../../Sheard/Navbar/Loading";
+import CheckoutForm from "./CheckoutForm";
 
 const stripePromise = loadStripe(
   "pk_test_51L1DFFCwGCfttUfe1ga8fmlmuPMDoPK74Ff0taFqPrzWrE5y12nRMi3hp4uRP9TJ57oPrAkemLc0jH1lifIW2pUq00lITNOwS5"
@@ -31,18 +32,16 @@ const Payment = () => {
             {" "}
             Hello,{booking.name}{" "}
           </h2>
-          <p className="font-bold">Please pay for </p>
-          <p className="text-orange-700">
-            Your Appointment: <span className="text-orange"></span>
-          </p>
-          <p>Please pay $</p>
+          <p className="font-bold">Please pay for {booking.toolName} </p>
+
+          <p>Please pay $ {booking.price}</p>
         </div>
       </div>
       <div class="card w-96 bg-base-100 shadow-xl">
         <div class="card-body">
-          {/* <Elements stripe={stripePromise}>
-              <CheckoutForm appointment={appointment} />
-            </Elements> */}
+          <Elements stripe={stripePromise}>
+            <CheckoutForm booking={booking} />
+          </Elements>
         </div>
       </div>
     </div>

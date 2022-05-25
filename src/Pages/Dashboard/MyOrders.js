@@ -21,7 +21,6 @@ const MyOrders = () => {
   }, [user]);
 
   const handleDeleteOne = (id) => {
-    console.log(id);
     const confirmDelete = window.confirm("Are you want to delete?");
     if (confirmDelete) {
       const url = `http://localhost:5000/booking/${id}`;

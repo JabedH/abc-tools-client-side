@@ -12,12 +12,11 @@ const Tools = () => {
     fetch("http://localhost:5000/tools", {
       headers: {
         "Content-Type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
       .then((res) => res.json())
       .then((data) => {
-        const newData = data.reverse();
+        const newData = data.reverse().slice(0, 6);
         setTools(newData);
       });
   }, []);

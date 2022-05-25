@@ -15,7 +15,7 @@ const Addaproduct = () => {
     const min_quantity = event.target.min_quantity.value;
     const quantity = event.target.quantity.value;
     const price = event.target.price.value;
-    const image = event.target.image.value;
+    const img = event.target.image.value;
     const info = event.target.info.value;
 
     fetch("http://localhost:5000/tools", {
@@ -26,7 +26,7 @@ const Addaproduct = () => {
         min_quantity,
         quantity,
         price,
-        image,
+        img,
         info,
         ratting,
       }),

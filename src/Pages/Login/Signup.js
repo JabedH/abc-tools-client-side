@@ -10,6 +10,7 @@ import useToken from "../../Hookes/useToken";
 
 const Signup = () => {
   const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
+  console.log(Guser);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [token] = useToken(user || Guser);

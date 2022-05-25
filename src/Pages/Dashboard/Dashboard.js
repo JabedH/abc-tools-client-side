@@ -34,7 +34,7 @@ const Dashboard = () => {
       </div>
       <div class="drawer-side">
         <label for="my-drawer-2" class="drawer-overlay"></label>
-        <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+        <ul class="menu p-4 overflow-y-auto w-80 bg-gray-100 text-base-content gap-3 mr-5">
           {!admin && (
             <>
               <li>

@@ -1,16 +1,22 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
+
+import avatar from "../../img/user.png";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("Reviews.json")
+    fetch("http://localhost:5000/reviews", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
-        const newData = data.reverse();
+        const newData = data.reverse().slice(0, 3);
         setReviews(newData);
       });
   }, []);
@@ -23,7 +29,7 @@ const Reviews = () => {
             <div className="object-center">
               <div class="avatar ">
                 <div class="w-24   rounded-full">
-                  <img src={review.img} alt="" />
+                  <img src={review.img ? review.img : avatar} alt="" />
                 </div>
               </div>
             </div>

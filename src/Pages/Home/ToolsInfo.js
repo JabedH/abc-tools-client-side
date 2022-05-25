@@ -5,10 +5,12 @@ import Rating from "react-rating";
 import { Link, useNavigate } from "react-router-dom";
 
 const ToolsInfo = ({ tool }) => {
+  const info = tool;
   const navigate = useNavigate();
   const handleOrder = (id) => {
     navigate(`/Purchase/${id}`);
   };
+  console.log(info.length);
   return (
     <div>
       <div className="mb-10">
@@ -25,7 +27,12 @@ const ToolsInfo = ({ tool }) => {
                 ""
               )}
             </h2>
-            <p className="h-20">{tool.info}</p>
+            <p className="h-20">
+              {tool.info.length > 100 ? tool.info.slice(0, 100) : tool.info}
+              <span className=" text-green-500">
+                {tool.info.length > 100 ? "....." : ""}
+              </span>
+            </p>
             <div className="flex">
               <p>
                 Mini Quantity:{" "}

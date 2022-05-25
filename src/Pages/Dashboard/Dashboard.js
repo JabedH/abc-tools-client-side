@@ -11,13 +11,26 @@ const Dashboard = () => {
     <div class="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content ">
-        <Outlet></Outlet>
         <label
           for="my-drawer-2"
           class="btn btn-primary drawer-button lg:hidden"
         >
-          Open drawer
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
         </label>
+        <Outlet></Outlet>
       </div>
       <div class="drawer-side">
         <label for="my-drawer-2" class="drawer-overlay"></label>
@@ -25,13 +38,14 @@ const Dashboard = () => {
           {!admin && (
             <>
               <li>
-                <Link to="/dashboard">My Orders</Link>
+                <Link to="/dashboard/myorders">My Orders</Link>
               </li>
               <li>
                 <Link to="/dashboard/addareview">Add A Review</Link>
               </li>
             </>
           )}
+
           <li>
             <Link to="/dashboard/myprofile">My Profile</Link>
           </li>

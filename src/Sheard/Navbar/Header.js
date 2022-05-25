@@ -36,10 +36,22 @@ const Header = () => {
               class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Item 1</a>
+                <Link to="myportfolio">My Portfolio</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link to="blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="dashboard">Dashboard</Link>
+              </li>
+              <li>
+                {user ? (
+                  <Link onClick={() => HandleLogout()} to="login">
+                    Logout
+                  </Link>
+                ) : (
+                  <Link to="login">Login</Link>
+                )}
               </li>
             </ul>
           </div>

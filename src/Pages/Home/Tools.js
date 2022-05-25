@@ -9,9 +9,17 @@ import ToolsInfo from "./ToolsInfo";
 const Tools = () => {
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/tools")
+    fetch("http://localhost:5000/tools", {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
-      .then((data) => setTools(data));
+      .then((data) => {
+        const newData = data.reverse();
+        setTools(newData);
+      });
   }, []);
 
   return (

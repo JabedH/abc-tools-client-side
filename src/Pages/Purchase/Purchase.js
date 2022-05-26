@@ -15,7 +15,7 @@ const Purchase = () => {
 
   console.log(typeof newCount);
   useEffect(() => {
-    fetch(`http://localhost:5000/tools/${id}`)
+    fetch(`https://secret-journey-60034.herokuapp.com/tools/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTools(data);
@@ -58,7 +58,7 @@ const Purchase = () => {
       address: address,
     };
     console.log(booking);
-    fetch("http://localhost:5000/booking", {
+    fetch("https://secret-journey-60034.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",

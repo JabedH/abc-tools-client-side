@@ -5,7 +5,7 @@ const ManageallordersData = ({ book, id, index }) => {
     BookingId: id,
   };
   const handleStatus = (id) => {
-    fetch(`http://localhost:5000/allbooking/${id}`, {
+    fetch(`https://secret-journey-60034.herokuapp.com/allbooking/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

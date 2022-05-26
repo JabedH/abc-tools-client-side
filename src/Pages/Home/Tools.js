@@ -9,7 +9,7 @@ import ToolsInfo from "./ToolsInfo";
 const Tools = () => {
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/tools", {
+    fetch("https://secret-journey-60034.herokuapp.com/tools", {
       headers: {
         "Content-Type": "application/json",
       },

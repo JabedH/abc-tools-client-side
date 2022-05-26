@@ -26,7 +26,7 @@ const MyProfileModal = ({ newUser, setNewUser }) => {
       address: address,
       img: img,
     };
-    fetch(`http://localhost:5000/allusers/${email}`, {
+    fetch(`https://secret-journey-60034.herokuapp.com/allusers/${email}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

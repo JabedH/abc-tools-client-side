@@ -10,12 +10,15 @@ const Myprofile = () => {
   const [newUsers, setNewUser] = useState([]);
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/allusers?email=${user?.email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        `https://secret-journey-60034.herokuapp.com/allusers?email=${user?.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

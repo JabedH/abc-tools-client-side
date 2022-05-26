@@ -18,7 +18,7 @@ const Addaproduct = () => {
     const img = event.target.image.value;
     const info = event.target.info.value;
 
-    fetch("http://localhost:5000/tools", {
+    fetch("https://secret-journey-60034.herokuapp.com/tools", {
       method: "POST",
       body: JSON.stringify({
         name,

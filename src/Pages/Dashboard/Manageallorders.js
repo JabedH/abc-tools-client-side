@@ -8,7 +8,7 @@ const Manageallorders = () => {
   const [booking, setBooking] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allbooking`, {
+    fetch(`https://secret-journey-60034.herokuapp.com/allbooking`, {
       method: "GET",
       // headers: {
       //   authorization: `Bearer ${localStorage.getItem("accessToken")}`,

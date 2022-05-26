@@ -14,8 +14,8 @@ const BusinessSummary = () => {
         <p className="text-xl font-bold mb-5 text-white">
           TRY TO UNDERSTAND USER EXPECTATION
         </p>
-        <div className="">
-          <div className="flex justify-evenly   text-xl font-bold ">
+        <div className="  ">
+          <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4   text-xl font-bold ">
             <div className="w-28">
               <img src={man} alt="" />
               <h3>100%</h3>

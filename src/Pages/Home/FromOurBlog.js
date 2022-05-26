@@ -17,10 +17,13 @@ const FromOurBlog = () => {
             <img src={img1} alt="Shoes" />
           </figure>
           <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
+            <h2 class="card-title">CIRCULAR SAW</h2>
+            <p>
+              This CIRCULAR SAW is very important for our daily like. We can use
+              it for our work.
+            </p>
+            <div class="card-actions justify-center">
+              <button class="btn ">See More</button>
             </div>
           </div>
         </div>
@@ -29,10 +32,13 @@ const FromOurBlog = () => {
             <img src={img2} alt="Shoes" />
           </figure>
           <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
+            <h2 class="card-title">Wood Cutter</h2>
+            <p>
+              Wood cutter is need for our daily life. We can use it any types of
+              wood work
+            </p>
+            <div class="card-actions justify-center">
+              <button class="btn ">See More</button>
             </div>
           </div>
         </div>
@@ -41,10 +47,13 @@ const FromOurBlog = () => {
             <img src={img3} alt="Shoes" />
           </figure>
           <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
+            <h2 class="card-title">Drill</h2>
+            <p>
+              Drill is also very important for our daily life. we can drill wood
+              , wall{" "}
+            </p>
+            <div class="card-actions justify-center">
+              <button class="btn ">See More</button>
             </div>
           </div>
         </div>

@@ -64,7 +64,7 @@ const ToolsInfo = ({ tool }) => {
             <div class="card-actions justify-center">
               <button
                 onClick={() => handleOrder(tool._id)}
-                className="btn btn-primary"
+                className="btn btn-primary w-full"
               >
                 place Order
               </button>

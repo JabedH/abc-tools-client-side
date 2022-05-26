@@ -9,14 +9,14 @@ const Blog = () => {
             How will you improve the performance of a React Application?
           </h2>
           <ul>
-            <li>Using Immutable Data Structures</li> <br />
-            <li>Using Dependency optimization</li> <br />
-            <li>Avoiding Frequent unnecessary re-renders</li> <br />
+            <li>1. Using Immutable Data Structures</li> <br />
+            <li>2. Using Dependency optimization</li> <br />
+            <li>3. Avoiding Frequent unnecessary re-renders</li> <br />
             <li>
-              User light image instead of Lazy loading images in React
+              4. User light image instead of Lazy loading images in React
             </li>{" "}
             <br />
-            <li>Optimizing the Javascript bundle with Gzip compression</li>
+            <li>5. Optimizing the Javascript bundle with Gzip compression</li>
           </ul>
         </div>
       </div>
@@ -76,17 +76,20 @@ const Blog = () => {
           <p>
             <ul>
               <li>
-                If you update it directly, calling the setState() afterward may
-                just replace the update you made.
+                {" "}
+                1. If you update it directly, calling the setState() afterward
+                may just replace the update you made.
               </li>{" "}
               <br />
               <li>
-                When you directly update the state, it does not change
+                {" "}
+                2. When you directly update the state, it does not change
                 this.state immediately.
               </li>{" "}
               <br />
               <li>
-                You'll lose control of state across components.. and you will
+                {" "}
+                3. You'll lose control of state across components.. and you will
                 not get result.
               </li>
             </ul>

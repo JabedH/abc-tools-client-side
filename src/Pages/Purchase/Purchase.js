@@ -69,25 +69,14 @@ const Purchase = () => {
   };
 
   return (
-    <div>
-      <div class="hero   text-start ">
+    <div className="text-left">
+      <div class="hero  ">
         <div class="hero-content grid lg:grid-cols-2 grid-cols-1 gap-10">
           <div className="bg-white h-full border ">
             <img src={tools.img} class="w-full  rounded-lg p-10" alt="" />
           </div>
           <div className="">
             <h1 class="text-3xl  font-bold uppercase">Shipping & Billing</h1>
-            {/* <div className="flex">
-              <div class="rating">
-                <FontAwesomeIcon style={{ color: "goldenrod" }} icon={faStar} />
-                <FontAwesomeIcon style={{ color: "goldenrod" }} icon={faStar} />
-                <FontAwesomeIcon style={{ color: "goldenrod" }} icon={faStar} />
-                <FontAwesomeIcon style={{ color: "goldenrod" }} icon={faStar} />
-                <FontAwesomeIcon style={{ color: "goldenrod" }} icon={faStar} />
-              </div>
-              <p>7 Reviews</p>
-            </div> */}
-            {/* <p class="py-6">{tools.info}</p> */}
             <div class="divider"></div>
             <div>
               <div>
@@ -168,11 +157,11 @@ const Purchase = () => {
                     class="input input-bordered h-20"
                     placeholder="
                     Please Fill Out Your Shipping Address"
+                    required
                   />
                 </div>
                 <input type="number" />
 
-                {/* <input type="submit" value="Confirm Order" /> */}
                 <div className="flex gap-5">
                   <button type="submit" class="btn btn-primary">
                     Confirm Order
@@ -180,20 +169,7 @@ const Purchase = () => {
                 </div>
               </form>
             </div>
-            <div className="flex gap-3   text-slate-600  ">
-              {/* <p>
-                Availability:{" "}
-                {tools.available_quantity < 1 ? (
-                  <span className=" text-red-500 font-bold">Stock Out</span>
-                ) : (
-                  <span className=" text-green-500 font-bold">In Stock</span>
-                )}
-              </p>
-              <p>
-                <span className="">Brand:</span> {tools.brand}
-              </p> */}
-              {/* <p>Min Quantity: {tools.min_quantity}</p> */}
-            </div>
+            <div className="flex gap-3   text-slate-600  "></div>
           </div>
         </div>
       </div>

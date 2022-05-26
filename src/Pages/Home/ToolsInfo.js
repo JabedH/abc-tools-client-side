@@ -12,7 +12,7 @@ const ToolsInfo = ({ tool }) => {
   };
   console.log(info.length);
   return (
-    <div>
+    <div className="text-left">
       <div className="mb-10">
         <div class="card   bg-base-100 shadow-2xl">
           <figure className="p-5 h-72">

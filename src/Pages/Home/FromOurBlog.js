@@ -5,7 +5,7 @@ import img3 from "../../img/ourblog/3.jpg";
 
 const FromOurBlog = () => {
   return (
-    <div className="px-12">
+    <div className="px-12 text-left">
       <div class="flex flex-col  border-opacity-50 ">
         <p className="p-4 text-left  border justify-center  text-2xl">
           From Our Blog

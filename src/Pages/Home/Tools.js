@@ -22,7 +22,7 @@ const Tools = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20 px-12">
       {tools.map((tool) => (
         <ToolsInfo key={tool._id} tool={tool} />
       ))}

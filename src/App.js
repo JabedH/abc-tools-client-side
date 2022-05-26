@@ -27,7 +27,7 @@ import Blog from "./Pages/Blog/Blog";
 
 function App() {
   return (
-    <div className="App px-12">
+    <div className="App ">
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>

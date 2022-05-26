@@ -37,9 +37,6 @@ const UsersData = ({ user, index, refetch }) => {
               </button>
             )}
           </td>
-          <td>
-            <button class="btn btn-xs">Remove User</button>
-          </td>
         </tr>
       </tbody>
     </>

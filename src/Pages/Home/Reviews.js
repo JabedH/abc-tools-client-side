@@ -21,7 +21,7 @@ const Reviews = () => {
       });
   }, []);
   return (
-    <div className="my-20">
+    <div className="my-20 px-12">
       <h1 className=" font-bold text-4xl mb-10">Reviews</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 ">
         {reviews.map((review, index) => (

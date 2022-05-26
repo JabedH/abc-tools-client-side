@@ -29,7 +29,6 @@ const MakeAdmin = () => {
               <th></th>
               <th>Email</th>
               <th>Make an admin</th>
-              <th>Delete</th>
             </tr>
           </thead>
           {users.map((user, index) => (

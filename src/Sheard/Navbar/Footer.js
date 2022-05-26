@@ -25,6 +25,9 @@ const Footer = () => {
           <a class="link link-hover">Cookie policy</a>
         </div>
       </footer>
+      <div className="text-center my-5">
+        Copyright ABC TOOLS ©2022. All Rights Reserved
+      </div>
     </div>
   );
 };

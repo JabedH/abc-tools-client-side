@@ -21,6 +21,22 @@ const useToken = (user) => {
           setToken(accessToken);
         });
     }
+    if (email) {
+      fetch(`http://localhost:5000/allusers/${email}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("data inside use token", data);
+          const accessToken = data.token;
+          localStorage.setItem("accessToken", accessToken);
+          setToken(accessToken);
+        });
+    }
   }, [user]);
   return [token];
 };

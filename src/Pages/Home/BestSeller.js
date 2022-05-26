@@ -15,7 +15,7 @@ const BestSeller = () => {
       });
   }, []);
   return (
-    <div>
+    <div className="px-12">
       <div class="flex flex-col w-full border-opacity-50 ">
         <p className="p-4 text-left  border justify-center text-2xl">
           Best Seller

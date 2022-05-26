@@ -5,14 +5,14 @@ import img3 from "../../img/ourblog/3.jpg";
 
 const FromOurBlog = () => {
   return (
-    <div>
-      <div class="flex flex-col w-full border-opacity-50 ">
+    <div className="px-12">
+      <div class="flex flex-col  border-opacity-50 ">
         <p className="p-4 text-left  border justify-center  text-2xl">
           From Our Blog
         </p>
       </div>
       <div className="grid grid-cols-1  lg:grid-cols-3 gap-3 my-10">
-        <div class="card w-96 bg-base-100 shadow-xl rounded-none">
+        <div class="card  bg-base-100 shadow-xl rounded-none">
           <figure>
             <img src={img1} alt="Shoes" />
           </figure>
@@ -27,7 +27,7 @@ const FromOurBlog = () => {
             </div>
           </div>
         </div>
-        <div class="card w-96 bg-base-100 shadow-xl rounded-none">
+        <div class="card  bg-base-100 shadow-xl rounded-none">
           <figure>
             <img src={img2} alt="Shoes" />
           </figure>
@@ -42,7 +42,7 @@ const FromOurBlog = () => {
             </div>
           </div>
         </div>
-        <div class="card w-96 bg-base-100 shadow-xl rounded-none">
+        <div class="card  bg-base-100 shadow-xl rounded-none">
           <figure>
             <img src={img3} alt="Shoes" />
           </figure>

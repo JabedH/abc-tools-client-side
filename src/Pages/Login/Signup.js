@@ -154,7 +154,7 @@ const Signup = () => {
                     </label>
                   </div>
                   <div class="form-control mt-6">
-                    <button class="btn btn-primary">Login</button>
+                    <button class="btn btn-primary">Signup</button>
                   </div>
                 </form>
                 <div className="flex ">

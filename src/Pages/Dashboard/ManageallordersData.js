@@ -29,7 +29,7 @@ const ManageallordersData = ({ book, id, index }) => {
           <td>
             <button
               onClick={() => handleStatus(book._id)}
-              className="btn btn-xs border-0 ml-2 bg-red-600"
+              className="btn btn-xs border-0 ml-2 bg-green-600"
             >
               {book.status}
             </button>

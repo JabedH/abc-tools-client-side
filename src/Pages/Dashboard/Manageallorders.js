@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
+import Loading from "../../Sheard/Navbar/Loading";
 import ManageallordersData from "./ManageallordersData";
 
 const Manageallorders = () => {
-  const [booking, setBooking] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://secret-journey-60034.herokuapp.com/allbooking`, {
+  const {
+    data: booking,
+    isLoading,
+    refetch,
+  } = useQuery("booking", () =>
+    fetch("http://localhost:5000/allbooking", {
       method: "GET",
-      // headers: {
-      //   authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      // },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setBooking(data);
-      });
-  }, []);
-  const payment = {};
-
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className=" justify-around ">
       <div class="overflow-x-auto ">
@@ -37,6 +37,7 @@ const Manageallorders = () => {
           </thead>
           {booking.map((book, index) => (
             <ManageallordersData
+              refetch={refetch}
               book={book}
               id={book._id}
               index={index}

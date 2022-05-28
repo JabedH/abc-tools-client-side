@@ -3,7 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
-const MyProfileModal = ({ newUser, setNewUser }) => {
+const MyProfileModal = ({ newUser, refetch }) => {
   const [user] = useAuthState(auth);
   console.log(newUser);
   const id = newUser._id;
@@ -26,7 +26,7 @@ const MyProfileModal = ({ newUser, setNewUser }) => {
       address: address,
       img: img,
     };
-    fetch(`https://secret-journey-60034.herokuapp.com/allusers/${email}`, {
+    fetch(`http://localhost:5000/allusers/${email}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -36,9 +36,11 @@ const MyProfileModal = ({ newUser, setNewUser }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
-          toast(`Your profile is updated `);
+        console.log(data.result);
+        if (data.result.modifiedCount > 0) {
+          toast("Successfully Your profile updated");
         }
+        refetch();
       });
   };
   return (
@@ -99,7 +101,11 @@ const MyProfileModal = ({ newUser, setNewUser }) => {
               placeholder="Past your image link"
               className="input input-bordered w-full max-w-xs"
             />
-            <input type="submit" className="btn btn-primary w-full max-w-xs" />
+            <input
+              type="submit"
+              value="Save"
+              className="btn btn-primary w-full max-w-xs"
+            />
           </form>
         </div>
       </div>

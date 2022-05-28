@@ -32,8 +32,8 @@ const Login = () => {
     console.log(data);
   };
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="my-10">
+      <h1 className="text-2xl mb-5">Login</h1>
       <div class=" flex justify-center">
         <div class=" w-96 lg:flex-row-reverse ">
           <div class="card flex-shrink-0 shadow-2xl bg-base-100">

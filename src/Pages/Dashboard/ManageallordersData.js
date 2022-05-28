@@ -1,11 +1,11 @@
 import React from "react";
 
-const ManageallordersData = ({ book, id, index }) => {
+const ManageallordersData = ({ book, id, index, refetch }) => {
   const BookingId = {
     BookingId: id,
   };
   const handleStatus = (id) => {
-    fetch(`https://secret-journey-60034.herokuapp.com/allbooking/${id}`, {
+    fetch(`http://localhost:5000/allbooking/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -16,6 +16,7 @@ const ManageallordersData = ({ book, id, index }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        refetch();
       });
   };
   return (
@@ -27,12 +28,28 @@ const ManageallordersData = ({ book, id, index }) => {
           <td>{book.toolName}</td>
           <td>{book.email}</td>
           <td>
-            <button
+            {book.status === "pending" && (
+              <button
+                onClick={() => handleStatus(book._id)}
+                className="btn btn-xs border-0 ml-2 bg-red-600"
+              >
+                {book.status}
+              </button>
+            )}
+            {book.status === "shipped" && (
+              <button
+                onClick={() => handleStatus(book._id)}
+                className="btn btn-xs border-0 ml-2 bg-green-600"
+              >
+                {book.status}
+              </button>
+            )}
+            {/* <button
               onClick={() => handleStatus(book._id)}
               className="btn btn-xs border-0 ml-2 bg-green-600"
             >
               {book.status}
-            </button>
+            </button> */}
           </td>
         </tr>
       </tbody>

@@ -12,7 +12,7 @@ const AddAReview = () => {
     event.preventDefault();
     const ratting = event.target.rating.value;
     const info = event.target.comment.value;
-    fetch("https://secret-journey-60034.herokuapp.com/reviews", {
+    fetch("http://localhost:5000/reviews", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ const AddAReview = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
-    toast("Added item successfully");
+    toast("Added review successfully");
     event.target.reset();
   };
   return (

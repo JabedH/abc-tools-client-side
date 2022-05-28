@@ -2,6 +2,7 @@ import React from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -9,6 +10,7 @@ import auth from "../../firebase.init";
 import useToken from "../../Hookes/useToken";
 
 const Signup = () => {
+  const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
   const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
   console.log(Guser);
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -22,7 +24,7 @@ const Signup = () => {
   } = useForm();
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
-    console.log(data);
+    await updateProfile({ displayName: data.name });
   };
   const navigate = useNavigate();
   const location = useLocation();
@@ -33,8 +35,8 @@ const Signup = () => {
   }
   return (
     <div>
-      <div>
-        <h1>Login</h1>
+      <div className="my-10">
+        <h1 className="text-2xl mb-5">Sign Up</h1>
         <div class=" flex justify-center">
           <div class=" w-96 lg:flex-row-reverse ">
             <div class="card flex-shrink-0 shadow-2xl bg-base-100">

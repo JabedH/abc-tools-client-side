@@ -6,7 +6,7 @@ const useToken = (user) => {
     const email = user?.user?.email;
     const currentUser = { userEmail: email };
     if (email) {
-      fetch(`https://secret-journey-60034.herokuapp.com/users/${email}`, {
+      fetch(`http://localhost:5000/users/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -22,7 +22,7 @@ const useToken = (user) => {
         });
     }
     if (email) {
-      fetch(`https://secret-journey-60034.herokuapp.com/allusers/${email}`, {
+      fetch(`http://localhost:5000/allusers/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

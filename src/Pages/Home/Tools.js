@@ -7,20 +7,21 @@ import Loading from "../../Sheard/Navbar/Loading";
 import ToolsInfo from "./ToolsInfo";
 
 const Tools = () => {
-  const [tools, setTools] = useState([]);
-  useEffect(() => {
-    fetch("https://secret-journey-60034.herokuapp.com/tools", {
+  const {
+    data: tools,
+    isLoading,
+    refetch,
+  } = useQuery("tools", () =>
+    fetch("http://localhost:5000/tools", {
+      method: "GET",
       headers: {
-        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const newData = data.reverse().slice(0, 6);
-        setTools(newData);
-      });
-  }, []);
-
+    }).then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20 px-12">
       {tools.map((tool) => (

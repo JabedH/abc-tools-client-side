@@ -1,25 +1,30 @@
 import { faStar, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import Rating from "react-rating";
 
 import avatar from "../../img/user.png";
+import Loading from "../../Sheard/Navbar/Loading";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
-
-  useEffect(() => {
-    fetch("https://secret-journey-60034.herokuapp.com/reviews", {
+  const { isLoading, refetch } = useQuery("reviews", () =>
+    fetch("http://localhost:5000/reviews", {
+      method: "GET",
       headers: {
-        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
       .then((res) => res.json())
       .then((data) => {
         const newData = data.reverse().slice(0, 3);
         setReviews(newData);
-      });
-  }, []);
+      })
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="my-20 px-12">
       <h1 className=" font-bold text-4xl mb-10">Reviews</h1>

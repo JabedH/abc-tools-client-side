@@ -9,15 +9,12 @@ const MyOrders = () => {
   const [user] = useAuthState(auth);
   useEffect(() => {
     if (user) {
-      fetch(
-        `https://secret-journey-60034.herokuapp.com/booking?userEmail=${user?.email}`,
-        {
-          method: "GET",
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        }
-      )
+      fetch(`http://localhost:5000/booking?userEmail=${user?.email}`, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => setBooking(data));
     }
@@ -26,7 +23,7 @@ const MyOrders = () => {
   const handleDeleteOne = (id) => {
     const confirmDelete = window.confirm("Are you want to delete?");
     if (confirmDelete) {
-      const url = `https://secret-journey-60034.herokuapp.com/booking/${id}`;
+      const url = `http://localhost:5000/booking/${id}`;
       fetch(url, {
         method: "DELETE",
       })

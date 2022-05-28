@@ -1,16 +1,21 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import Rating from "react-rating";
 import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import useAdmin from "../../Hookes/useAdmin";
 
 const ToolsInfo = ({ tool }) => {
+  const [user, loading] = useAuthState(auth);
+  const [admin, adminLoading] = useAdmin(user);
   const info = tool;
   const navigate = useNavigate();
   const handleOrder = (id) => {
     navigate(`/Purchase/${id}`);
   };
-  console.log(info.length);
+
   return (
     <div className="text-left">
       <div className="mb-10">
@@ -62,9 +67,11 @@ const ToolsInfo = ({ tool }) => {
               </div>
             </div>
             <div class="card-actions justify-center">
+              {}
               <button
                 onClick={() => handleOrder(tool._id)}
                 className="btn  w-full"
+                disabled={admin === true}
               >
                 place Order
               </button>

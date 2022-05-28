@@ -11,11 +11,13 @@ const Purchase = () => {
   const [count, setCount] = useState(0);
   const [tools, setTools] = useState([]);
   const newCount = parseFloat(count);
+  const [PurchaseData, setPurchaseData] = useState();
   const { name, _id, price } = tools;
+  const newPrice = tools.price * count;
 
   console.log(typeof newCount);
   useEffect(() => {
-    fetch(`https://secret-journey-60034.herokuapp.com/tools/${id}`)
+    fetch(`http://localhost:5000/tools/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTools(data);
@@ -58,7 +60,7 @@ const Purchase = () => {
       address: address,
     };
     console.log(booking);
-    fetch("https://secret-journey-60034.herokuapp.com/booking", {
+    fetch("http://localhost:5000/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -67,7 +69,6 @@ const Purchase = () => {
     }).then((res) => res.json());
     toast(`Congratulation confirmed Your Order `);
   };
-
   return (
     <div className="text-left">
       <div class="hero  ">
@@ -82,19 +83,20 @@ const Purchase = () => {
               <div>
                 <div>
                   <p className="font-2xl">QUANTITY</p>
-                </div>
-                <div className="flex border-2 w-28">
-                  <button onClick={inc} className="text-3xl pl-2">
-                    +
-                  </button>
-                  <input
-                    className="w-14 text-center "
-                    type="text"
-                    value={count}
-                  />
-                  <button onClick={dec} className="text-3xl pr-2">
-                    -
-                  </button>
+                  <div></div>
+                  <div className="flex border-2 w-28">
+                    <button onClick={inc} className="text-3xl pl-2">
+                      +
+                    </button>
+                    <input
+                      className="w-14 text-center "
+                      type="text"
+                      value={count}
+                    />
+                    <button onClick={dec} className="text-3xl pr-2">
+                      -
+                    </button>
+                  </div>
                 </div>
               </div>
               <div>
@@ -118,7 +120,16 @@ const Purchase = () => {
                   />
                 </div>
               </div>
-              <h1 className="font-bold text-4xl my-5">${tools.price}.00</h1>
+              <div>
+                <h1>Per Unit Price</h1>
+                <h1 className="font-bold  text-priceColor text-xl">
+                  {tools.price}$
+                </h1>
+              </div>
+              <h1>Total Price</h1>
+              <h1 className="font-bold text-4xl mb-5 text-priceColor">
+                {newPrice}$
+              </h1>
               <form action="" onSubmit={handleBooking}>
                 <div class="form-control gap-3">
                   <label class="label">

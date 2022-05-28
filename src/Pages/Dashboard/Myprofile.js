@@ -3,30 +3,43 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import MyProfileModal from "./MyProfileModal";
 import picture from "../../img/user.png";
+import { useQuery } from "react-query";
+import Loading from "../../Sheard/Navbar/Loading";
 
 const Myprofile = () => {
   const [user] = useAuthState(auth);
   console.log(user);
-  const [newUsers, setNewUser] = useState([]);
-  useEffect(() => {
-    if (user) {
-      fetch(
-        `https://secret-journey-60034.herokuapp.com/allusers?email=${user?.email}`,
-        {
-          method: "GET",
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        }
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setNewUser(data);
-        });
-    }
-  }, [user]);
-
+  const [getUsers, setGetUsers] = useState(null);
+  // useEffect(() => {
+  //   if (user) {
+  //     fetch(`http://localhost:5000/allusers?email=${user?.email}`, {
+  //       method: "GET",
+  //       headers: {
+  //         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  //       },
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         console.log(data);
+  //         setNewUser(data);
+  //       });
+  //   }
+  // }, [user]);
+  const {
+    data: newUsers,
+    isLoading,
+    refetch,
+  } = useQuery("newUsers", () =>
+    fetch(`http://localhost:5000/allusers?email=${user?.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="my-10 flex justify-center">
       {newUsers.map((newUser) => (
@@ -47,9 +60,7 @@ const Myprofile = () => {
               <tbody>
                 <tr>
                   <td>Name: </td>
-                  <td>
-                    {user?.displayName ? user?.displayName : newUser.name}
-                  </td>
+                  <td>{newUser.name ? newUser.name : user?.displayName}</td>
                 </tr>
                 <tr>
                   <td>Email:</td>
@@ -70,7 +81,8 @@ const Myprofile = () => {
               </tbody>
             </table>
           </div>
-          <MyProfileModal newUser={newUser} setNewUser={setNewUser} />
+
+          <MyProfileModal newUser={newUser} refetch={refetch} />
         </div>
       ))}
     </div>

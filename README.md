@@ -4,8 +4,8 @@
 
 ### About this siite.
 
-* This is a car inventory-related site.
-* This site is only for wholesale old new cars.
+* This is a manufacturer-related site.
+* This site is only for wholesale.
 * In this site has a footer and header.
 * Added more than 3 sections about cars.
 * inventory section has Update button where I can incrise value and added new item.

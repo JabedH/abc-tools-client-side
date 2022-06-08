@@ -6,6 +6,7 @@
 
 * This is a manufacturer-related site.
 * This site is only for wholesale.
+* Login users can purchase products, make payments, see order status and update their profile
 * Admin can add, delete and update products.
 * In this site has a footer and header.
 * Added more than 3 sections about cars.

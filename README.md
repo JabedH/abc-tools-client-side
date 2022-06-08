@@ -6,10 +6,11 @@
 
 * This is a manufacturer-related site.
 * This site is only for wholesale.
+* Admin can add, delete and update products.
 * In this site has a footer and header.
 * Added more than 3 sections about cars.
 * inventory section has Update button where I can incrise value and added new item.
-* Added addded login and logout button. 
+* Added addded login and logout button.
 
 
 ### About technology.
@@ -23,3 +24,6 @@
 * react roouts 
 * react Rating
 * JWT token
+* Tailwind CSS
+* MongoDB
+* DaisyUI

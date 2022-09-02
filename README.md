@@ -2,6 +2,11 @@
 
 # CAR VALLEY - https://abctools-4b309.web.app/
 
+# login info
+
+gmail: admin@gmail.com
+password: 123456
+
 ### About this siite.
 
 * This is a manufacturer-related site.

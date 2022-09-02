@@ -4,8 +4,8 @@
 
 # login info
 
-gmail: admin@gmail.com
-password: 123456
+* gmail: admin@gmail.com
+* password: 123456
 
 ### About this siite.
 

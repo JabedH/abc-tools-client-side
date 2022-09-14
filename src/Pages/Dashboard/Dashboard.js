@@ -25,7 +25,7 @@ const Dashboard = () => {
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              stroke-width="2"y
               d="M4 6h16M4 12h8m-8 6h16"
             />
           </svg>

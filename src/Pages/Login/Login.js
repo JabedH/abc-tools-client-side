@@ -58,7 +58,7 @@ const Login = () => {
                         value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                         message: "provide a valid email",
                       },
-                    })}
+                    })}                     
                   />
                   <label class="label">
                     {errors.email?.type === "required" && (
@@ -119,7 +119,7 @@ const Login = () => {
                 </div>
               </form>
               <div className="flex ">
-                <p>New to Doctors Portal?</p>
+                <p>New to ABC Tools?</p>
                 <Link className="text-primary" to="/signup">
                   Create new account
                 </Link>

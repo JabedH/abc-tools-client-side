@@ -1,6 +1,7 @@
 import {
   faArrowRightArrowLeft,
   faBoxArchive,
+  faBusinessTime,
   faCartFlatbedSuitcase,
   faCircleRadiation,
   faCreditCard,
@@ -22,7 +23,7 @@ const FreeShipping = () => {
               {" "}
               <FontAwesomeIcon
                 style={{ color: "#F88148" }}
-                icon={faShippingFast}
+                icon={faBusinessTime}
               />
             </p>
             <div className="text-left px-4">

@@ -6,16 +6,15 @@ import photo from "../../img/mypic.png";
 const Myportfolio = () => {
   const [user] = useAuthState(auth);
   return (
-    <div className="my-10 flex justify-center">
-      <div>
+    <div className="my-10  ">
+      <div className="">
         <div class="avatar mb-5">
           <div class="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img src={photo} />
           </div>
         </div>
-
-        <div class="overflow-x-auto">
-          <table class="table  w-96">
+        <div class="grid">
+          <table class="table ">
             <thead>
               <tr>
                 <th>Title</th>

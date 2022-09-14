@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Manageproducts = () => {
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/tools", {
+    fetch("https://secret-journey-60034.herokuapp.com/tools", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -20,7 +20,7 @@ const Manageproducts = () => {
     console.log(id);
     const confirmDelete = window.confirm("Are you want to delete?");
     if (confirmDelete) {
-      const url = `http://localhost:5000/tools/${id}`;
+      const url = `https://secret-journey-60034.herokuapp.com/tools/${id}`;
       fetch(url, {
         method: "DELETE",
       })

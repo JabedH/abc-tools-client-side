@@ -10,32 +10,20 @@ const Myprofile = () => {
   const [user] = useAuthState(auth);
   console.log(user);
   const [getUsers, setGetUsers] = useState(null);
-  // useEffect(() => {
-  //   if (user) {
-  //     fetch(`http://localhost:5000/allusers?email=${user?.email}`, {
-  //       method: "GET",
-  //       headers: {
-  //         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-  //       },
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log(data);
-  //         setNewUser(data);
-  //       });
-  //   }
-  // }, [user]);
   const {
     data: newUsers,
     isLoading,
     refetch,
   } = useQuery("newUsers", () =>
-    fetch(`http://localhost:5000/allusers?email=${user?.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => res.json())
+    fetch(
+      `https://secret-journey-60034.herokuapp.com/allusers?email=${user?.email}`,
+      {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading />;

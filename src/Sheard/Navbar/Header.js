@@ -12,7 +12,7 @@ const Header = () => {
   };
   return (
     <div>
-      <div class="navbar bg-headerColor font-bold">
+      <div class="navbar bg-headerColor font-bold text-left " sticky="top">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -35,12 +35,12 @@ const Header = () => {
               tabindex="0"
               class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
+              {/* <li>
                 <Link to="myportfolio">My Portfolio</Link>
               </li>
               <li>
                 <Link to="blog">Blog</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="dashboard">Dashboard</Link>
               </li>
@@ -61,12 +61,12 @@ const Header = () => {
         </div>
         <div class="navbar-end hidden lg:flex">
           <ul class="menu menu-horizontal p-0 gap-3">
-            <li>
+            {/* <li>
               <Link to="myportfolio">My Portfolio</Link>
             </li>
             <li>
               <Link to="blog">Blog</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="dashboard">Dashboard</Link>
             </li>

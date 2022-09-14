@@ -10,7 +10,7 @@ import Loading from "../../Sheard/Navbar/Loading";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { isLoading, refetch } = useQuery("reviews", () =>
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://secret-journey-60034.herokuapp.com/reviews", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
